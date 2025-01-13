@@ -1,0 +1,23 @@
+<h1 style="text-align: center;">Jokes</h1>
+<p id="q" style="text-align: center;"></p>
+<p id="a" style="text-align: center;"></p>
+<script type="text/javascript">
+    jokes = {
+        "Why do I think the rotation of the earth is a good thing?":"It really makes my day",
+        "Why is change hard?":"Have you ever tied to bend a coin",
+        "Why shouldn't you fart on an elevator":"It's wrong on so many levels",
+        "What happened when a red ship collided with a blue ship?":"The survivors were marooned",
+        "What's red and bad for your teeth?":"A brick(Like Colten)",
+        "What's the dumbest animal in the jungle?":"The polar bear",
+        "What is a French person's favorite gaming console?":"Wii",
+        "Were did the general keep his armies?":"In his sleevies",
+    };
+    num = Math.round(Math.random()*(Object.keys(jokes).length-1));
+    Q = Object.keys(jokes)[num];
+    A= jokes[Q];
+    document.getElementById("q").innerHTML = Q;
+    document.getElementById("q").onclick = function() {
+        document.getElementById("a").innerHTML = A;
+    };
+    
+</script>
