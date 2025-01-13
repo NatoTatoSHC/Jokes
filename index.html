@@ -1,5 +1,6 @@
-<title>Jokes-8</title>
+<title>Jokes</title>
 <h1 style="text-align: center;">Jokes</h1>
+<p style="text-align: center;">Click Question to get Answer</p>
 <p id="q" style="text-align: center;"></p>
 <p id="a" style="text-align: center;"></p>
 <script type="text/javascript">
@@ -12,10 +13,15 @@
         "What's the dumbest animal in the jungle?":"The polar bear",
         "What is a French person's favorite gaming console?":"Wii",
         "Were did the general keep his armies?":"In his sleevies",
+        "How did Ebenezer Scrooge score a goal?":"As the Ghost of Christmas passed",
+        "What do you call a young locomotive?":"Trainee",
+        "What's the heaviest soup in Asia?":"One-Ton soup",
+        "What's so good about a new type of whiteboard?":"It's remarkable"
     };
     num = Math.round(Math.random()*(Object.keys(jokes).length-1));
     Q = Object.keys(jokes)[num];
     A= jokes[Q];
+    document.getElementsByTagName("title").innerHTML = "Jokes - "+(Object.keys(jokes).length+1).toString();
     document.getElementById("q").innerHTML = Q;
     document.getElementById("q").onclick = function() {
         document.getElementById("a").innerHTML = A;
