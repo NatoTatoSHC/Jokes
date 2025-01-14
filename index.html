@@ -4,6 +4,7 @@
 <p id="q" style="text-align: center;"></p>
 <p id="a" style="text-align: center;"></p>
 <script type="text/javascript">
+
     jokes = {
         "Why do I think the rotation of the earth is a good thing?":"It really makes my day",
         "Why is change hard?":"Have you ever tied to bend a coin",
@@ -16,10 +17,22 @@
         "How did Ebenezer Scrooge score a goal?":"As the Ghost of Christmas passed",
         "What do you call a young locomotive?":"Trainee",
         "What's the heaviest soup in Asia?":"One-Ton soup",
-        "What's so good about a new type of whiteboard?":"It's remarkable"
+        "What's so good about a new type of whiteboard?":"It's remarkable",
+        "Why can't you hear a Psychiatrist using the bathroom?":"Because the \"P\" is silent",
+        "What would you find in superman's bathroom?":"Superbowl",
+        "Why did the cop sit on the toilet?":"To do his duty",
+        "What's the best hand in bathroom poker?":"A royal flush",
+        "What id the poo say to the fart?":"You blow me away",
+        "Where do bees go to the bathroom?":"At the BP station",
+        "Why did the cat vomit on th carpet?":"She wasn't feline well"
+        
     };
+
     num = Math.round(Math.random()*(Object.keys(jokes).length-1));
     Q = Object.keys(jokes)[num];
+    
+    
+    
     A= jokes[Q];
     document.getElementsByTagName("title").innerHTML = "Jokes - "+(Object.keys(jokes).length+1).toString();
     document.getElementById("q").innerHTML = Q;
