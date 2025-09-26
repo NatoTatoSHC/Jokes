@@ -1,43 +1,115 @@
-<title>Jokes</title>
-<h1 style="text-align: center;">Jokes</h1>
-<p style="text-align: center;">Click Question to get Answer</p>
-<p id="q" style="text-align: center;"></p>
-<p id="a" style="text-align: center;"></p>
-<script type="text/javascript">
-
-    jokes = {
-        "Why do I think the rotation of the earth is a good thing?":"It really makes my day",
-        "Why is change hard?":"Have you ever tied to bend a coin",
-        "Why shouldn't you fart on an elevator":"It's wrong on so many levels",
-        "What happened when a red ship collided with a blue ship?":"The survivors were marooned",
-        "What's red and bad for your teeth?":"A brick(Like Colten)",
-        "What's the dumbest animal in the jungle?":"The polar bear",
-        "What is a French person's favorite gaming console?":"Wii",
-        "Were did the general keep his armies?":"In his sleevies",
-        "How did Ebenezer Scrooge score a goal?":"As the Ghost of Christmas passed",
-        "What do you call a young locomotive?":"Trainee",
-        "What's the heaviest soup in Asia?":"One-Ton soup",
-        "What's so good about a new type of whiteboard?":"It's remarkable",
-        "Why can't you hear a Psychiatrist using the bathroom?":"Because the \"P\" is silent",
-        "What would you find in superman's bathroom?":"Superbowl",
-        "Why did the cop sit on the toilet?":"To do his duty",
-        "What's the best hand in bathroom poker?":"A royal flush",
-        "What id the poo say to the fart?":"You blow me away",
-        "Where do bees go to the bathroom?":"At the BP station",
-        "Why did the cat vomit on th carpet?":"She wasn't feline well"
-        
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jokes</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #f9f9f9, #d0e9ff);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    h1 {
+      margin-top: 20px;
+      font-size: 2rem;
+      color: #333;
+    }
+    .card {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 30px;
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+    }
+    #q {
+      display: inline-block;
+      cursor: pointer;
+      padding: 10px 20px;
+      margin-top: 10px;
+      background-color: #007BFF;
+      color: white;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    #q:hover {
+      background-color: #0056b3;
+    }
+    #a {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #444;
+    }
+    #reload {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 8px 16px;
+      background: #28a745;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    #reload:hover {
+      background: #1e7e34;
+    }
+  </style>
+</head>
+<body>
+  <h1>Jokes</h1>
+  <p>Click the question to see the answer</p>
+  <div class="card">
+    <p id="q"></p>
+    <p id="a"></p>
+    <button id="reload">Reload Joke</button>
+  </div>
+  
+  <script>
+    const jokes = {
+      "Why do I think the rotation of the earth is a good thing?":"It really makes my day",
+      "Why is change hard?":"Have you ever tied to bend a coin",
+      "Why shouldn't you fart on an elevator":"It's wrong on so many levels",
+      "What happened when a red ship collided with a blue ship?":"The survivors were marooned",
+      "What's red and bad for your teeth?":"A brick(Like Colten)",
+      "What's the dumbest animal in the jungle?":"The polar bear",
+      "What is a French person's favorite gaming console?":"Wii",
+      "Were did the general keep his armies?":"In his sleevies",
+      "How did Ebenezer Scrooge score a goal?":"As the Ghost of Christmas passed",
+      "What do you call a young locomotive?":"Trainee",
+      "What's the heaviest soup in Asia?":"One-Ton soup",
+      "What's so good about a new type of whiteboard?":"It's remarkable",
+      "Why can't you hear a Psychiatrist using the bathroom?":"Because the \"P\" is silent",
+      "What would you find in superman's bathroom?":"Superbowl",
+      "Why did the cop sit on the toilet?":"To do his duty",
+      "What's the best hand in bathroom poker?":"A royal flush",
+      "What id the poo say to the fart?":"You blow me away",
+      "Where do bees go to the bathroom?":"At the BP station",
+      "Why did the cat vomit on th carpet?":"She wasn't feline well"
     };
 
-    num = Math.round(Math.random()*(Object.keys(jokes).length-1));
-    Q = Object.keys(jokes)[num];
-    
-    
-    
-    A= jokes[Q];
-    document.getElementsByTagName("title").innerHTML = "Jokes - "+(Object.keys(jokes).length+1).toString();
-    document.getElementById("q").innerHTML = Q;
-    document.getElementById("q").onclick = function() {
-        document.getElementById("a").innerHTML = A;
-    };
-    
-</script>
+    function getRandomJoke() {
+      const keys = Object.keys(jokes);
+      const num = Math.floor(Math.random() * keys.length);
+      const Q = keys[num];
+      const A = jokes[Q];
+      document.getElementById("q").textContent = Q;
+      document.getElementById("a").textContent = "";
+      document.getElementById("q").onclick = function() {
+        document.getElementById("a").textContent = A;
+      };
+    }
+
+    document.title = "Jokes - " + Object.keys(jokes).length;
+    getRandomJoke();
+
+    document.getElementById("reload").onclick = getRandomJoke;
+  </script>
+</body>
+</html>
