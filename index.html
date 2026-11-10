@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,6 +61,25 @@
     #reload:hover {
       background: #1e7e34;
     }
+
+    /* Suggest Joke button */
+    #suggest {
+      display: inline-block;
+      margin-top: 15px;
+      margin-left: 8px;
+      padding: 8px 16px;
+      background: #8e44ad;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.3s, transform 0.2s;
+    }
+    #suggest:hover {
+      background: #732d91;
+      transform: translateY(-2px);
+    }
   </style>
 </head>
 <body>
@@ -69,6 +89,7 @@
     <p id="q"></p>
     <p id="a"></p>
     <button id="reload">Reload Joke</button>
+    <button id="suggest">Suggest Joke</button>
   </div>
   
   <script>
@@ -93,6 +114,7 @@
       "Where do bees go to the bathroom?":"At the BP station",
       "Why did the cat vomit on the carpet?":"She wasn't feline well",
       "What do you call a triple A battery?":"A bAAAtery"
+      
     };
 
     function getRandomJoke() {
@@ -111,6 +133,8 @@
     getRandomJoke();
 
     document.getElementById("reload").onclick = getRandomJoke;
+
+    document.getElementById("suggest").onclick = () => {location.assign("https://forms.gle/s6J4gqkrawmgp5MP9")}
   </script>
 </body>
 </html>
